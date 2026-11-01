@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Warm off-white neutral base palette (Never pure #FFFFFF) */
+  --color-bg-base: #FAF8F5;
+  --color-bg-surface: #F5F2EC;
+  --color-bg-muted: #EFECE6;
+  --color-border: #E2DDD5;
+  
+  --color-text-primary: #1C1B19;
+  --color-text-secondary: #48443F;
+  --color-text-muted: #78726A;
+
+  /* Artisan Spruce / Deep Muted Teal Single Accent */
+  --color-accent: #1B4944;
+  --color-accent-hover: #133935;
+  --color-accent-subtle: #E8F0EE;
+  --color-accent-text: #FAF8F5;
+}
+
+.dark {
+  --color-bg-base: #141413;
+  --color-bg-surface: #1E1D1B;
+  --color-bg-muted: #282724;
+  --color-border: #363430;
+
+  --color-text-primary: #F5F2EC;
+  --color-text-secondary: #C8C3BA;
+  --color-text-muted: #8E887E;
+
+  --color-accent: #2A6F68;
+  --color-accent-hover: #35857C;
+  --color-accent-subtle: #192C2A;
+  --color-accent-text: #F5F2EC;
+}
+
+body {
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, .font-heading {
+  font-family: 'Newsreader', Georgia, serif;
+  letter-spacing: -0.015em;
+}
+
+/* Accessible visible focus states */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Accessibility: Respect user reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
